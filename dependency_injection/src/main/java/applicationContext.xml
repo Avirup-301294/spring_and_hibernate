@@ -27,6 +27,11 @@
             class="com.avirup.dependency_injection.CricketCoach">
         <!-- Setup our setter inj -->
         <property name="fortuneService" ref="myFortuneService"></property>
+
+        <!-- Inject Literal Values -->
+        <property name="emailAddress" value="thebestcoach@example.com"></property>
+        <property name="team" value="Royal Challengers Bangalore"></property>
+        
     </bean>
     
 </beans>
