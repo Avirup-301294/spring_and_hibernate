@@ -23,5 +23,10 @@
  		<constructor-arg ref="myFortuneService" />
  	</bean>
     
+    <bean id="myCricketCoach"
+            class="com.avirup.dependency_injection.CricketCoach">
+        <!-- Setup our setter inj -->
+        <property name="fortuneService" ref="myFortuneService"></property>
+    </bean>
     
 </beans>
