@@ -7,7 +7,9 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	
+    <!-- load the properties file -->
+	<context:property-placeholder location="classpath:sport.properties"/>
+    
     <!-- Define your beans here -->
     
     <!-- define the dependency -->
@@ -25,13 +27,17 @@
     
     <bean id="myCricketCoach"
             class="com.avirup.dependency_injection.CricketCoach">
+
         <!-- Setup our setter inj -->
         <property name="fortuneService" ref="myFortuneService"></property>
 
         <!-- Inject Literal Values -->
-        <property name="emailAddress" value="thebestcoach@example.com"></property>
-        <property name="team" value="Royal Challengers Bangalore"></property>
-        
+        <!-- <property name="emailAddress" value="thebestcoach@example.com"></property>
+        <property name="team" value="Royal Challengers Bangalore"></property> -->
+
+        <!-- Property Injection -->
+        <property name="emailAddress" value="${foo.email}"></property>
+        <property name="team" value="${foo.team}"></property>
     </bean>
     
 </beans>
